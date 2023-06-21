@@ -1,4 +1,4 @@
-\LoadClass[14pt]{extarticle}
+\LoadClass[12pt]{extarticle}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{prometheus_cv}[2020/10/14 Here to make editing your CV not an eternal torment]
@@ -22,7 +22,7 @@
 \newcommand{\datedsubsection}[4]{%	
 	\cvsubsection[#2]{#3 \hfill \small{\textlf{\scshape{#2}}}}%
 	\begin{minipage}{5cm}
-		\vspace*{-.7ex}\hspace*{-2.5cm}\footnotesize #1
+		\vspace*{-.7ex}\hspace*{-2.5cm}\small #1
 	\end{minipage}
 	\raggedright
 		
@@ -35,7 +35,7 @@
 \newcommand{\datedsubsectionnarrow}[4]{%	
 	\cvsubsectionnarrow[#2]{#3 \hfill \small{\textlf{\scshape{#2}}}}%
 	\begin{minipage}{5cm}
-		\vspace*{-.7ex}\hspace*{-2.5cm}\footnotesize #1
+		\vspace*{-.7ex}\hspace*{-2.5cm}\small #1
 	\end{minipage}
 	\raggedright
 	
@@ -53,7 +53,7 @@
 	{\raggedright} 
 	{}{0em}                      
 	{}                           
-\titlespacing*{\cvsubsection}{0pt}{3.5ex plus 1ex minus .2ex}{-2.5ex}
+\titlespacing*{\cvsubsection}{0pt}{1.5ex plus 1ex minus .2ex}{-3.5ex}
 
 % The same but in narrow 
 \newcounter{cvsubsectionnarrow}
@@ -62,5 +62,5 @@
 	{\raggedright} 
 	{}{0em}                      
 	{}                           
-\titlespacing*{\cvsubsectionnarrow}{0pt}{0pt}{-2.5ex}
+\titlespacing*{\cvsubsectionnarrow}{0pt}{0pt}{-1.5ex}
 

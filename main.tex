@@ -40,9 +40,23 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
 
-\usepackage[style=numeric, sorting=ydnt, maxbibnames=99]{biblatex}            % bib manager
+\usepackage[style=numeric, sorting=ydnt, maxbibnames=99,  defernumbers=true]{biblatex}            % bib manager
 \addbibresource{pubs.bib}
+% Reverse publication list numbering
+% Count total number of entries in each refsection
+\makeatletter
+\defbibenvironment{counter}
+  {\renewcommand{\blx@driver}[1]{}}
+  {}
+  {\csnumgdef{entrycount}{%
+      \csuse{entrycount}+1}}
+\makeatother
 
+% Print the labelnumber as the total number of entries in the
+% current refsection, minus the actual labelnumber, plus one
+\DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}
+\newrobustcmd*{\mkbibdesc}[1]{%
+  \number\numexpr\csuse{entrycount}+1-#1\relax}
 
 %% function to make one name bold
 \newcommand{\mynameformat}{\namepartfamily\addcomma\addspace \namepartgiveni}
@@ -78,6 +92,12 @@
 \section{Education}
 \input{education.tex}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% SKILLS %%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Skills}
+\input{skills.tex}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% PUBLICATIONS %%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -91,18 +111,10 @@
 \input{honors.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%% SKILLS %%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Skills}
-\input{skills.tex}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% Research Experience %%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Research Experience}
 \input{research.tex}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% Teaching %%%%%%%%%%%%%%%
@@ -110,27 +122,23 @@
 \section{Teaching}
 \input{teaching.tex}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% Presentations, talks and posters %%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Presentations and posters}
 \input{presentations.tex}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% Mentorship %%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mentorship}
-\input{mentorship.tex}
-
+%\section{Mentorship}
+%\input{mentorship.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% SERVICE %%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Academic Service}
+\section{Service}
 \input{service.tex}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% EXTRAS %%%%%%%%%%%% 
