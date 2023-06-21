@@ -1,6 +1,6 @@
-\documentclass{prometheus_cv}
+\documentclass[14pt]{prometheus_cv}
 \usepackage[utf8]{inputenc}
-\usepackage[a4paper, total={5.3in, 10in}, top=2cm]{geometry}		% width=5.3in, height=10in, top margin=2cm on each page
+\usepackage[a4paper, total={5.3in, 10in}, left=3.5cm,right=2cm,top=2cm,bottom=2.5cm]{geometry}		% width=5.3in, height=10in, top margin=2cm on each page
 
 \usepackage{xcolor}																				  % define some colors
 \definecolor{highlight}{HTML}{283559}
@@ -35,10 +35,30 @@
 \usepackage{fancyhdr}																		  
 \fancyhf{}
 \rhead{Curriculum Vit\ae}
-\lhead{Prometheus Fire}
+\lhead{Murillo F. Rodrigues}
 \rfoot{Page \thepage}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
+
+\usepackage[style=numeric, sorting=ydnt, maxbibnames=99]{biblatex}            % bib manager
+\addbibresource{pubs.bib}
+
+
+%% function to make one name bold
+\newcommand{\mynameformat}{\namepartfamily\addcomma\addspace \namepartgiveni}
+\DeclareDelimFormat{andothersdelim}{et al.}
+\newcommand{\makeauthorbold}[2]{
+  \DeclareNameFormat{author}{
+    \ifthenelse{\equal{\namepartfamily}{#1}}% \AND \equal{\namepartgiven}{#2}}
+    {\mkbibbold{\mynameformat}}
+    {\mynameformat}
+    \ifthenelse{\value{listcount}<\value{liststop}}
+    {\multinamedelim}
+    {\ifmorenames{\andothersdelim}{}}
+  }
+}
+\makeauthorbold{Rodrigues}{Murillo}
+
 
 \begin{document}
 \thispagestyle{empty}					% Turn off header and footer for the first page
@@ -67,7 +87,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% HONORS and SCHOLARSHIPS %%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Honors}
+\section{Scholarships and Awards}
 \input{honors.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -78,16 +98,44 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Research Experience %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Research Experience}
+\input{research.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Teaching %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Teaching}
+\input{teaching.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Presentations, talks and posters %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Presentations and posters}
+\input{presentations.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Mentorship %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mentorship}
+\input{mentorship.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% SERVICE %%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Service To The Scientific Community}
-\input{service}
+\section{Academic Service}
+\input{service.tex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% EXTRAS %%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Extracurricular Activities}
-\input{extra.tex}
+%\section{Extracurricular Activities}
+%\input{extra.tex}
 
 \end{document}

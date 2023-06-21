@@ -1,4 +1,4 @@
-\LoadClass{article}
+\LoadClass[14pt]{extarticle}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{prometheus_cv}[2020/10/14 Here to make editing your CV not an eternal torment]
@@ -22,7 +22,7 @@
 \newcommand{\datedsubsection}[4]{%	
 	\cvsubsection[#2]{#3 \hfill \small{\textlf{\scshape{#2}}}}%
 	\begin{minipage}{5cm}
-		\vspace*{-.7ex}\hspace*{-3cm}\footnotesize #1
+		\vspace*{-.7ex}\hspace*{-2.5cm}\footnotesize #1
 	\end{minipage}
 	\raggedright
 		
@@ -35,7 +35,7 @@
 \newcommand{\datedsubsectionnarrow}[4]{%	
 	\cvsubsectionnarrow[#2]{#3 \hfill \small{\textlf{\scshape{#2}}}}%
 	\begin{minipage}{5cm}
-		\vspace*{-.7ex}\hspace*{-3cm}\footnotesize #1
+		\vspace*{-.7ex}\hspace*{-2.5cm}\footnotesize #1
 	\end{minipage}
 	\raggedright
 	
