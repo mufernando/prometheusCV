@@ -22,8 +22,9 @@
 \newcommand{\datedsubsection}[4]{%	
 	\cvsubsection[#2]{#3 \hfill \small{\textlf{\scshape{#2}}}}%
 	\begin{minipage}{5cm}
-		\vspace*{-.7ex}\hspace*{-2.5cm}\small #1
+		\vspace*{-.7ex}\hspace*{-3.5cm}\small #1
 	\end{minipage}
+    \hfill\allowbreak
 	\raggedright
 		
 	\begin{small}
@@ -35,8 +36,9 @@
 \newcommand{\datedsubsectionnarrow}[4]{%	
 	\cvsubsectionnarrow[#2]{#3 \hfill \small{\textlf{\scshape{#2}}}}%
 	\begin{minipage}{5cm}
-		\vspace*{-.7ex}\hspace*{-2.5cm}\small #1
+		\vspace*{-.7ex}\hspace*{-3.5cm}\small #1
 	\end{minipage}
+    \hfill\allowbreak
 	\raggedright
 	
 	\begin{small}
